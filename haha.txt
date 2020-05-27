@@ -10,4 +10,4 @@
 
 我在dev上对hah做了改进.
 
-我改进了dev，并测试no-ff功能
+我在origin master上也改进了hah.
