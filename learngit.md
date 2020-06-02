@@ -68,3 +68,26 @@ git reset --hard 版本号
 # 若不记得之前的版本号，可以使用下面语句，查看每一次操作时的版本号
 git reflog  
 ```
+
+
+
+
+```bash
+# create a new branch and switch to it
+git checkout -b new_branch_name
+
+# list all branches and indicate current branch
+git branch
+
+# switch branches
+git checkout branch_name
+
+# merge branch
+git merge branch_name
+
+# delete branch
+git branch -d branch_name
+
+# 关联远程主机并推送.若存在多个远程主机关联库，则通过-u选项可以指定默认关联库，之后采用git push即可
+git push -u origin branch_name
+```

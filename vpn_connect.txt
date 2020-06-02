@@ -1,0 +1,4 @@
+依次用dpkg -i安装两个文件即可。
+vpn配置命令sudo vpn-connect -c
+vpn连接命令sudo vpn-connect
+vpn断开命令sudo vpn-connect -d
