@@ -48,7 +48,10 @@ git branch -d other_branch
 
 # 以直观形式查看git log
 git log --graph --pretty=oneline --abbrev-commit 
+```
 
+## 远程分支合并
+```
 # 如果git pull冲突，则先fix冲突，然后add commit即可；如果没有冲突，则可以fast-forward.
 # git pull = git fetch + git merge
 
