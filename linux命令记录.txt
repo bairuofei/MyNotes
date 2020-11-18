@@ -1,0 +1,25 @@
+查看当前路径 pwd
+ifconfig
+gedit ~/.bashrc
+
+文件权限和文件的用户|组|其他用户权限 之间是什么关系？
+
+git查看用户名和邮箱地址：
+$ git config user.name
+$ git config user.email
+
+2.删除全局配置项
+
+(1)终端执行命令：
+
+git config --global --unset user.name
+
+(2)编辑配置文件：
+
+git config --global --edit
+
+在未将文件修改commit之前，可以通过
+git checkout 被修改的文件名
+来撤销对此文件进行的修改
+
+

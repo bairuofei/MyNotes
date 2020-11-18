@@ -48,7 +48,10 @@ git branch -d other_branch
 
 # 以直观形式查看git log
 git log --graph --pretty=oneline --abbrev-commit 
+```
 
+## 远程分支合并
+```
 # 如果git pull冲突，则先fix冲突，然后add commit即可；如果没有冲突，则可以fast-forward.
 # git pull = git fetch + git merge
 
@@ -56,6 +59,14 @@ git fetch origin master:tmp # 取回远程主分支，并在本地建立名为tm
 git diff tmp    # 查看二者不同
 git merge tmp   # 将tmp分支合并到当前分支
 git branch -d tmp  # 删除tmp分支
+
+# 直接方法
+git push # 首先用git push看有没有冲突 如果本地进行了修改，远程也进行了修改，则会产生冲突
+git pull # 拉取远程仓库
+# 这一步需要注意：如果远程仓库的修改与本地的内容冲突，则会显示远程仓库与本地仓库冲突的部分。如果远程仓库比本地添加了一些文件，则会直接加入。如果本地仓库的内容比远程仓库的内容多了某一部分，则不会显示。总结：只会显示由于远程仓库与本地仓库的交集中，与本地仓库冲突的部分；至于交集以外的文件变动，则会直接合并，并等待stage。
+# 若git pull之后存在冲突，则在修改完冲突后，需要git add之后commit提交；而如果不存在冲突，直接合并，则系统会自动产生一个merge的commit信息，之后只需要直接git push即可。
+git add
+git push
 ```
 
 ## 版本回退
@@ -68,3 +79,29 @@ git reset --hard 版本号
 # 若不记得之前的版本号，可以使用下面语句，查看每一次操作时的版本号
 git reflog  
 ```
+<<<<<<< HEAD
+=======
+
+
+
+
+```bash
+# create a new branch and switch to it
+git checkout -b new_branch_name
+
+# list all branches and indicate current branch
+git branch
+
+# switch branches
+git checkout branch_name
+
+# merge branch
+git merge branch_name
+
+# delete branch
+git branch -d branch_name
+
+# 关联远程主机并推送.若存在多个远程主机关联库，则通过-u选项可以指定默认关联库，之后采用git push即可
+git push -u origin branch_name
+```
+>>>>>>> 93baf2a63b8546c1dd3329874cd2bfd874a10f7f
