@@ -13,4 +13,3 @@
 4. 在bin目录下，cmd执行NuSMV -int。打开NuSMV命令行.
 
    ![image-20201118120102779](../Md_Pictures/NuSMV-installation/image-20201118120102779.png)
-

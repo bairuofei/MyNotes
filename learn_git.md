@@ -1,3 +1,5 @@
+# Git学习笔记
+
 工作区->暂存区->版本库
 
 ## 本地修改的接受和丢弃
@@ -19,7 +21,25 @@ git rm file_name
 # 文件误删后可以使用 git checkout -- file_name回退到最近一次暂存区或版本库的内容，进行恢复
 ```
 
+## gitignore
+
+```bash
+git rm --cached readme.txt   # 删除readme.txt的跟踪，并保留在本地
+git rm -f readme.txt         # 删除readme.txt的跟踪，并删除本地文件
+```
+
+如果在建立gitignore之前已经push项目，则新建的gitignore不会起作用。此时解决办法是将
+本地缓存删除（改变为untrack状态），然后再提交。
+
+```bash
+git rm -r --cached .        # 最后的.是删除当前目录下所有文件的track状态
+git add .
+git commit -m "update .gitignore"
+
+```
+
 ## 分支的创建与合并
+
 ```bash
 # 创建新的分支，并切换。
 git checkout -b branch_name 
@@ -51,7 +71,8 @@ git log --graph --pretty=oneline --abbrev-commit
 ```
 
 ## 远程分支合并
-```
+
+```bash
 # 如果git pull冲突，则先fix冲突，然后add commit即可；如果没有冲突，则可以fast-forward.
 # git pull = git fetch + git merge
 
@@ -70,6 +91,7 @@ git push
 ```
 
 ## 版本回退
+
 ```bash
 # 回退到上一版本:
 git reset --hard HEAD^     
@@ -77,9 +99,11 @@ git reset --hard HEAD^
 git reset --hard 版本号      
 
 # 若不记得之前的版本号，可以使用下面语句，查看每一次操作时的版本号
-git reflog  
+git reflog 
 ```
+
 ## git查看远程仓库
+
 ```bash
 git remote -v
 ```
